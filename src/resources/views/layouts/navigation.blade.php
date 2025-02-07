@@ -15,6 +15,12 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('nyt.index')" :active="request()->routeIs('nyt.index')">
+                        {{ __('New Your Times') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('newsapi.index')" :active="request()->routeIs('newsapi.index')">
+                        {{ __('News API org') }}
+                    </x-nav-link>
                 </div>
             </div>
 

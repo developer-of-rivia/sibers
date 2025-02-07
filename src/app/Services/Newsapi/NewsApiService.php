@@ -23,7 +23,7 @@ class NewsApiService
     
         $response = Http::withHeaders([
             'Authorization' => $apiKey,
-        ])->get($newsapiDomain . 'top-headlines/sources');
+        ])->get($newsapiDomain . 'everything' . '?q=' . $phrase);
     
         $this->response = $response->json();
     }

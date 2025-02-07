@@ -19,7 +19,7 @@ class NewsapiController extends Controller
     {
         $service->setRequest($request);
         $service->handle();
-        
+
         return view('newsapi/main', ['data' => $service->getResponse()]);
     }
 }

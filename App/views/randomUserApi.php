@@ -4,7 +4,7 @@
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
-		<title>News API</title>
+		<title>Random User API</title>
 		
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
@@ -39,8 +39,8 @@
 
           <form action="send" method="POST">
             <div>
-              <h3>Сколько постов сгенерировать</h3>
-              <input type="number" name="userAPI_generateCount" min="1" max="250" required placeholder="количество" style="min-width: 150px;" value="<?= $data['searchQuery'] ?>">
+              <h3>Сколько пользователей сгенерировать</h3>
+              <input type="number" name="userAPI_generateCount" min="1" max="250" required placeholder="количество" style="min-width: 150px;" value="<?php isset($data['searchQuery']); ?>">
             </div>
             <button type="submit" class="btn btn-primary mt-4">Сгенерировать</button>
           </form>
@@ -48,9 +48,10 @@
             <h3 class="mt-4">Результат</h3>
             <p>Сгенерировано: <?= $data['searchQuery'] ?> постов</p>
             <div class="row">
-              <div class="d-flex justify-content-between">
+              <h6>Страницы</h6>
+              <div class="d-flex">
                 <?php for($i = 0; $data['pageNeed'] > $i; $i++): ?>
-                  <a href="?page=<?= $i ?>"><?= $i ?></a>
+                  <a href="?page=<?= $i ?>" class="me-4"><?= $i + 1 ?></a>
                 <?php endfor; ?>
               </div>
                 

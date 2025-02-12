@@ -42,7 +42,7 @@
             <input type="text" hidden name="isApiRequest" value="1">
             <div class="mb-3">
               <label for="phrase" class="form-label">Поисковой запрос</label>
-              <input type="text" class="form-control" id="phrase" name="phrase" required value="<?= $data['searchQuery'] ?>">
+              <input type="text" class="form-control" id="phrase" name="phrase" required value="<?php isset($data['searchQuery']); ?>">
             </div>
             <button type="submit" class="btn btn-primary">Поиск</button>
           </form>
@@ -52,9 +52,10 @@
             <p>По запросу: <?= $data['searchQuery'] ?></p>
             <p>Найдено: <?= $data['allPostsCount'] ?> записей</p>
             <div class="row">
-              <div class="d-flex justify-content-between">
+              <h6>Страницы</h6>
+              <div class="d-flex">
                 <?php for($i = 0; $data['pageNeed'] > $i; $i++): ?>
-                  <a href="?page=<?= $i ?>"><?= $i ?></a>
+                  <a href="?page=<?= $i ?>" class="me-4"><?= $i + 1 ?></a>
                 <?php endfor; ?>
               </div>
                 

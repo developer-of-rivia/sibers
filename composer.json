@@ -1,0 +1,19 @@
+{
+    "name": "developer-of-rivia/sibers-test",
+    "description": "test task",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    },
+    "authors": [
+        {
+            "name": "developer-of-rivia"
+        }
+    ],
+    "require": {
+        "symfony/var-dumper": "^6.4",
+        "guzzlehttp/guzzle": "^7.9"
+    }
+}
